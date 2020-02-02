@@ -6,9 +6,7 @@ const overlay = document.querySelector('.lightbox__overlay');
 const todoContainer = document.querySelector('.todo-container');
 const selectStatus = document.querySelector('.js-status');
 const selectPriority = document.querySelector('.js-priority');
-
 const markup = createMenu();
-
 button.addEventListener('click', openTodoCreation);
 overlay.addEventListener('click', closeOverlay);
 searchInput.addEventListener('input', filterByName);
@@ -18,6 +16,7 @@ selectPriority.addEventListener('change', filterByPriority);
 
 function createTodoMarkup(title, description, priority) {
     return `<div class="todo-item">
+    <div class="todo-item__done-img hide"></div>
     <p class="todo-item__title">${title}</p>
     <p class="todo-item__description">${description}</p>
     <p class="todo-item__priority">${priority}</p>
@@ -33,7 +32,7 @@ function createTodoMarkup(title, description, priority) {
 function createMenu() {
     return `<div class="create-menu">
     <p class="title">Title</p>
-    <input type="text" class="title-input" placeholder="Title..." maxlength="50" required>
+    <input type="text" class="title-input" placeholder="Title..." maxlength="25" required>
     <p class="description">Description</p>
     <input type="text" class="description-input" placeholder="Description..." required>
     <p class="priority">Priority</p>
@@ -73,12 +72,14 @@ function openTodoCreation(e) {
                 select.addEventListener('change', () =>{
                     if(select.value === 'Done'){
                         select.closest('.todo-item').classList.add('done-todo');
+                        select.closest('.todo-item').firstElementChild.classList.remove('hide');
                     }
                     else if(select.value === 'Delete'){
                         select.closest('.todo-item').remove();
                     }
                     else {
                         select.closest('.todo-item').classList.remove('done-todo');
+                        select.closest('.todo-item').firstElementChild.classList.add('hide');
                     }
                 })
             })
