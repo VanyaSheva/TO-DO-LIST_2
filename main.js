@@ -59,7 +59,6 @@ function openTodoCreation(e) {
     const priority = document.querySelector('.create-menu select');
     const save = document.querySelector('.save-todo');
     save.addEventListener('click', saveNewTodo);
-    save.addEventListener('keydown', saveNewTodo);
     function saveNewTodo() {
         const menu = document.querySelector('.create-menu');
         if(title.value.length !== 0 && description.value.length !==0){
@@ -100,8 +99,8 @@ function closeOverlay(e) {
 }
 
 function filterByStatus() {
-        const todoItems = document.querySelectorAll('.todo-item');
-        todoItems.forEach(item => {
+        const todoItemsStatus = document.querySelectorAll('.todo-item');
+        todoItemsStatus.forEach(item => {
             if (!item.classList.contains('done-todo') && selectStatus.value ==='Done') {
                 item.closest('.todo-item').classList.add('none-status');
             }

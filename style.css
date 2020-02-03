@@ -25,6 +25,7 @@ body{
     padding: 0 14px;
     cursor: pointer;
     background-color: #085951;
+    color: #FFFFFF;
 }
 .search:hover{
     background-color: #05322d;
@@ -81,15 +82,18 @@ linear-gradient(to bottom, #ffffff 0%,#e5e5e5 100%);
 .create-button {
     display: inline-block;
     border-radius: 4px;
-    background-color: #f4511e;
-    border: none;
+    background-color: #085951;
+    border: 1px solid #16ffed;
     color: #FFFFFF;
     text-align: center;
     font-size: 28px;
     transition: all 0.5s;
     cursor: pointer;
 }
-
+.create-button:hover{
+    border-color: #ffffff;
+    background-color: #05322d;
+}
 .create-button span {
     cursor: pointer;
     display: inline-block;
@@ -233,11 +237,12 @@ linear-gradient(to bottom, #ffffff 0%,#e5e5e5 100%);
     padding: 50px;
     transition: 0.4s ease-in-out;
     margin-bottom: 30px;
-    background-color: #09e3da;
+    background-color: #085951;
     color: white;
     border-top-left-radius: 44px;
     border-bottom-right-radius:44px;
 }
+
 .hide{
     display: none;
 }
@@ -269,11 +274,10 @@ linear-gradient(to bottom, #ffffff 0%,#e5e5e5 100%);
     width: 80%;
     font-size: 20px;
     border: 3px dotted;
-    border-radius: 20%;
-    padding-top: 9px;
+    padding-top: 6px;
 }
 .todo-item__priority:hover{
-    border: 2px double;
+    border: 3px double;
 }
 .todo-item__select{
     align-self: flex-start;
